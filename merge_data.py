@@ -34,14 +34,6 @@ try:
 except Exception as e:
     print(f"{file2}: {e}")
 
-file3 = 'data/spotify_history-selected-columns (2).csv'
-try:
-    df3 = pd.read_csv(file3, usecols=['ts', 'spotify_track_uri'])
-    df3.rename(columns={'ts': 'listened_at', 'spotify_track_uri': 'track_id'}, inplace=True)
-    history_frames.append(df3)
-    print(f"Успешно загружен {file3}")
-except Exception as e:
-    print(f"{file3}: {e}")
 
 combined_history = pd.concat(history_frames, ignore_index=True)
 
