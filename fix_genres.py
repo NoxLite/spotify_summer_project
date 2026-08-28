@@ -3,13 +3,15 @@ import django
 import time
 import requests
 
+import info
+
 os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'spotify_analytics.settings')
 django.setup()
 
 from analytics.models import Artist, Genre
 
-CLIENT_ID = 'a0432f2d64f44a1f98751647ccd2b8ea'
-CLIENT_SECRET = 'b4f8de3b96d74185a0ae8f81fa40dd48'
+CLIENT_ID = info.CLIENT_ID
+CLIENT_SECRET = info.CLIENT_SECRET
 
 
 def get_new_token():
